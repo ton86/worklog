@@ -1,4 +1,4 @@
 venv/
 tests/
-.vscode/
+**/__pycache__
 
