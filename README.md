@@ -25,7 +25,7 @@ I wanted a simple CLI app to do the following with my "worklog.md" file with the
 2. Display "to-do" check lists (sortable by entry or due date). Like this:
 
     $ python worklog.py to-do
-    
+
     $ python worklog.py to-do --due
 
 3. Display completed "to-do" checked lists:
@@ -78,6 +78,8 @@ Future iterations will:
 ## Installation
 
 Save the files to a directory. Install python packages indicated in requirements.txt.
+
+Update path in config.json to your "markdown.md" file.
 
 Future development - WIll soon package this to be callable from command line as it's own app without having to type 'python'.
 
