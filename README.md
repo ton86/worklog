@@ -34,7 +34,7 @@ I wanted a simple CLI app to do the following with my "worklog.md" file with the
 
 ## Data entry rules for markdown file
 
-Each time I make a new post in my markdown file I timestamp it with a header 3 (###) and the YYYYMMDD HHMM (military time. This is very important for proper parsing of posts. 
+Each time I make a new post in my markdown file I timestamp it with a header 3 (###) and the YYYYMMDD HHMM (military time). This is very important for proper parsing of posts. 
 
 Example:
 
