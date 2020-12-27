@@ -85,6 +85,8 @@ Update path in config.json to your "markdown.md" file. Or you can use the defaul
 
 Future development - WIll soon package this to be callable from command line as it's own app without having to type 'python'.
 
+Developed with Python 3.8.5.
+
 
 
 
