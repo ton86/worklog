@@ -33,7 +33,8 @@ def concat(list):
 
 @app.command()
 def to_do(
-    sort_due: bool = typer.Option(False, "--due", help="Sort by due date.")):
+    sort_due: bool = typer.Option(False, "--due", help="Sort by due date.")
+    ):
     """ 
     Print to-do check list.
     """
