@@ -79,7 +79,9 @@ Future iterations will:
 
 Save the files to a directory. Install python packages indicated in requirements.txt.
 
-Update path in config.json to your "markdown.md" file.
+Update path in config.json to your "markdown.md" file. Or you can use the default location and create a new "markdown.md" file on your Windows PC here:
+
+    "C:\\Users\\Public\\Documents\\worklog.md"
 
 Future development - WIll soon package this to be callable from command line as it's own app without having to type 'python'.
 
