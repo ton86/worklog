@@ -25,6 +25,7 @@ I wanted a simple CLI app to do the following with my "worklog.md" file with the
 2. Display "to-do" check lists (sortable by entry or due date). Like this:
 
     $ python worklog.py to-do
+    
     $ python worklog.py to-do --due
 
 3. Display completed "to-do" checked lists:
