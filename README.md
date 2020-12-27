@@ -32,8 +32,6 @@ I wanted a simple CLI app to do the following with my "worklog.md" file with the
 
     $ python worklog.py done
 
-I felt this would be a good learning experience to get some reps in using the "typer" CLI package, using markdown formatting decorators, json config files, venv, gitignore, setup.py, github, complex list comprehension or list for loops, test-driven development, creating a standalone CLI app that doesn't require typing "python" beforee it, etc.
-
 ## Data entry rules for markdown file
 
 Each time I make a new post in my markdown file I timestamp it with a header 2 (##) and the YYYYMMDD HHMM (military time. This is very important for proper parsing of posts. 
