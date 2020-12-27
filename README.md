@@ -34,11 +34,11 @@ I wanted a simple CLI app to do the following with my "worklog.md" file with the
 
 ## Data entry rules for markdown file
 
-Each time I make a new post in my markdown file I timestamp it with a header 2 (##) and the YYYYMMDD HHMM (military time. This is very important for proper parsing of posts. 
+Each time I make a new post in my markdown file I timestamp it with a header 3 (###) and the YYYYMMDD HHMM (military time. This is very important for proper parsing of posts. 
 
 Example:
 
-    ## 20201226 1400
+    ### 20201226 1400
 
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ...
 
@@ -46,7 +46,7 @@ I also use the checklist format in markdown to keep track of my to-do list.
 
 Example:
 
-    ## 20201226 1405
+    ### 20201226 1405
 
     - [x] Lorem ipsum dolor sit amet. Due: 20201230
     - [ ] Xonsectetur adipiscing elit. Due: 20201231

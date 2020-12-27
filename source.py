@@ -33,9 +33,9 @@ def group_posts(lines):
     """
     posts = []
     post = []
-    lines.append('## ')
+    lines.append('### ')
     for line in lines:
-        if line.startswith('## '):
+        if line.startswith('### '):
             posts.append(post)
             post = [line]
         else:
