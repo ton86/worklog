@@ -2,7 +2,6 @@ from source import source
 import json 
 import sys
 import typer
-import re
 
 
 # Start a typer app
