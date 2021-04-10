@@ -22,9 +22,9 @@ def get_lines(md_file_path):
     """
     Return list of lines from markdown file.
     """
-    with open(md_file_path, 'r') as md_file:
+    with open(md_file_path, 'r', encoding="utf8") as md_file:
         lines = md_file.readlines()
-        return lines    
+        return lines     
 
 
 def group_posts(lines):
