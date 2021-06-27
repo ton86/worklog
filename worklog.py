@@ -32,26 +32,31 @@ def concat(list):
 @app.command()
 def to_do(
     sort_due: bool = typer.Option(False, "--due", help="Sort by due date."),
-    backlog: bool = typer.Option(False, "--backlog", help="Chronological backlog.")):
+    backlog: bool = typer.Option(False, "--backlog", help="Chronological backlog."),
+    sort_entry: bool = typer.Option(False, "--entry", help="Sort by entry date.")
+    ):
     """ 
-    Print to-do check list and/or to-do backlog.
+    Print to-do check list and/or to-do backlog. Prints due list by default.
     """
     check_list = lines_start_with('- [ ]')
-    backlog_list = [line for line in check_list if line.endswith('Backlog\n')]
     due_list = [line for line in check_list if not line.endswith('Backlog\n')]
+    due_list = sorted(due_list, key=lambda x: (x[-10:]))
+    backlog_list = [line for line in check_list if line.endswith('Backlog\n')]
     if sort_due and backlog:
         check_list = sorted(check_list, key=lambda x: (x[-10:]))
-        typer.echo('To do (sorted by due date):\n') 
+        typer.echo('To do and backlog (sorted by due date):\n') 
         typer.echo(concat(check_list)) 
     elif sort_due:
-        due_list = sorted(due_list, key=lambda x: (x[-10:]))
         typer.echo('To do (sorted by due date):\n') 
         typer.echo(concat(due_list))
     elif backlog:
         typer.echo('Backlog (sorted by entry):\n') 
         typer.echo(concat(backlog_list))
-    else:
+    elif sort_entry:
         typer.echo('To do (sorted by entry):\n') 
+        typer.echo(concat(check_list))        
+    else:
+        typer.echo('To do (sorted by due date):\n') 
         typer.echo(concat(due_list))
 
 
