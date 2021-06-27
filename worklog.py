@@ -31,19 +31,28 @@ def concat(list):
 
 @app.command()
 def to_do(
-    sort_due: bool = typer.Option(False, "--due", help="Sort by due date.")
-    ):
+    sort_due: bool = typer.Option(False, "--due", help="Sort by due date."),
+    backlog: bool = typer.Option(False, "--backlog", help="Chronological backlog.")):
     """ 
-    Print to-do check list.
+    Print to-do check list and/or to-do backlog.
     """
     check_list = lines_start_with('- [ ]')
-    if sort_due:
+    backlog_list = [line for line in check_list if line.endswith('Backlog\n')]
+    due_list = [line for line in check_list if not line.endswith('Backlog\n')]
+    if sort_due and backlog:
         check_list = sorted(check_list, key=lambda x: (x[-10:]))
         typer.echo('To do (sorted by due date):\n') 
-        typer.echo(concat(check_list))
+        typer.echo(concat(check_list)) 
+    elif sort_due:
+        due_list = sorted(due_list, key=lambda x: (x[-10:]))
+        typer.echo('To do (sorted by due date):\n') 
+        typer.echo(concat(due_list))
+    elif backlog:
+        typer.echo('Backlog (sorted by entry):\n') 
+        typer.echo(concat(backlog_list))
     else:
         typer.echo('To do (sorted by entry):\n') 
-        typer.echo(concat(check_list))
+        typer.echo(concat(due_list))
 
 
 @app.command()
