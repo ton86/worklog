@@ -1,5 +1,6 @@
 venv/
 tests/
+output/
 **/__pycache__
 **/.vscode
 

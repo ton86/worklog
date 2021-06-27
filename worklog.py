@@ -1,7 +1,9 @@
 from source import source
+from output import output_dir
 import json 
 import sys
 import typer
+from datetime import datetime
 
 
 # Start a typer app
@@ -84,6 +86,31 @@ def search(string: str):
         if found:
             posts_found.append(post)
             typer.echo(concat(post))
+
+
+@app.command()
+def today():
+    """
+    Return markdown text of today's posts.
+    Output markdown file.
+    """
+    todays_posts = []
+    yyyymmdd = datetime.today().strftime('%Y%m%d')
+    header_date = f'### {yyyymmdd}'
+    for post in posts:
+        found = False
+        for line in post:
+            if header_date in line.lower():
+                found = True
+        if found:
+            todays_posts.append(post)
+            typer.echo(concat(post))
+    if len(todays_posts) > 0: 
+        flat_list = [item for sublist in todays_posts for item in sublist]
+        string = ' '.join(map(str, flat_list))
+        md_file = open(f'{output_dir()}\\worklog{yyyymmdd}.md', 'w')
+        n = md_file.write(string)
+        md_file.close()
 
 
 if __name__ == '__main__':
