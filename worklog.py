@@ -1,9 +1,7 @@
-from source import source
-from output import output_dir
-import json 
-import sys
 import typer
+from source import source
 from datetime import datetime
+from output import output_dir
 
 
 # Start a typer app
